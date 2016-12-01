@@ -24,11 +24,11 @@ The *Knight’s Tour Problem* is about finding a tour such that the knight visit
 every field on an *n x n* chessboard once. For example on a 5 x 5 chessboard, a
 Knight’s tour is:
 
-`24 11  6 17  0`  
-`19 16 23 12  7`  
-`10  5 18  1 22`  
-`15 20  3  8 13`  
-` 4  9 14 21  2`
+`24 11 _6 17 _0`  
+`19 16 23 12 _7`  
+`10 _5 18 _1 22`  
+`15 20 _3 _8 13`  
+`_4 _9 14 21 _2`
  
 The tour starts in the right-upper corner, then down 2 and left 1; then down 2 and right 1; and so on.  There are no knight’s tours on 2 x 2, 3 x 3 and 4 x 4 chessboards,
 but for every bigger board there is.
@@ -59,12 +59,12 @@ Also provided is the following snippet:
 
 This allows two pairs of ints to be added together using `+`.
 
-## A `moves` function
+## A `moves` function [3 marks]
 
 Implement a function `moves` that takes a `pair<int,int>` representing a position on the board, and returns a `vector` containing all the positions that could be reached from there.  These should be in anti-clockwise order, starting at 6 o'clock.  For the example moves above, they would be added to the vector in the order shown (1 to 8).
 
 
-## A `legal_moves` function
+## A `legal_moves` function [4 marks]
 
 Implement a function `legal_moves` that takes:
 
@@ -77,7 +77,7 @@ This should use your `moves` function to find all the squares that can be reache
 - The square is inside the board (no negative positions, does not equal or exceed the board size)
 - The square is not in the given Path
 
-## Finding the first tour
+## Finding the first tour [3 marks]
 
 *NB This is the only place in the coursework you can use an imperative for loop.  It can be done without using a for loop, using `std::accumulate`, but it's a bit of a hack.*
 
@@ -96,7 +96,7 @@ To test your code, compile and run `knights.cc`.  This uses `first_tour` to look
 
 # b) Earlier assignments, reloaded
 
-## Trade
+## Trade [3 marks]
 
 The price of a given commodity, can be represented by a vector of prices.  For instance:
 
@@ -108,7 +108,7 @@ In `Trade.h` define a template function `bestProfit` that takes two iterators, d
 
 *Note: as with part (a), imperative loops are forbidden, and you must not write any functions other than `bestProfit`.*
 
-## How many ways to make
+## How many ways to make [2 marks]
 
 In the file HowManyWaysToMake.h, write a function `howManyWaysToMake` that, given:
  
