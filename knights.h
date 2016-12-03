@@ -35,14 +35,15 @@ Path moves(const pair<int, int> & from) {
 
 Path legal_moves(const int & size, const Path & path, const pair<int, int> & pos) {
     Path pLegalMoves = Path();
+    Path pMoves = moves(pos);
 
-    std::copy_if(path.begin(), path.end(), std::back_inserter(pLegalMoves),
+    std::copy_if(pMoves.begin(), pMoves.end(), std::back_inserter(pLegalMoves),
     [size, path](const pair<int, int> & position) {
 
         bool isInside = position.first >= 0 && position.first < size &&
                 position.second >= 0 && position.second < size;
         bool isInPath = std::find(path.begin(), path.end(), position) != path.end();
-        return isInside && isInPath;
+        return isInside && !isInPath;
     });
 
     return pLegalMoves;
