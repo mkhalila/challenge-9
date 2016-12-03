@@ -42,7 +42,7 @@ Path legal_moves(const int & size, const Path & path, const pair<int, int> & pos
         bool isInside = position.first >= 0 && position.first < size &&
                 position.second >= 0 && position.second < size;
         bool isInPath = std::find(path.begin(), path.end(), position) != path.end();
-        return isInside && !isInPath;
+        return isInside && isInPath;
     });
 
     return pLegalMoves;
