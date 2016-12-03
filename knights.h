@@ -21,14 +21,16 @@ pair<int,int> operator+(const pair<int,int> & a, const pair<int,int> & b) {
 Path moves(const pair<int, int> & from) {
     Path pMoves = Path();
 
-    pair<int, int> one = pair(from.first + 1, from.second - 2);
-    pair<int, int> two = pair(from.first + 2, from.second - 1);
-    pair<int, int> three = pair(from.first + 2, from.second + 1);
-    pair<int, int> four = pair(from.first + 1, from.second + 2);
-    pair<int, int> five = pair(from.first - 1, from.second + 2);
-    pair<int, int> six = pair(from.first - 2, from.second + 1);
-    pair<int, int> seven = pair(from.first - 2, from.second - 1);
-    pair<int, int> eight = pair(from.first - 1, from.second - 2);
+    pMoves.emplace_back(from.first + 1, from.second - 2);
+    pMoves.emplace_back(from.first + 2, from.second - 1);
+    pMoves.emplace_back(from.first + 2, from.second + 1);
+    pMoves.emplace_back(from.first + 1, from.second + 2);
+    pMoves.emplace_back(from.first - 1, from.second + 2);
+    pMoves.emplace_back(from.first - 2, from.second + 1);
+    pMoves.emplace_back(from.first - 2, from.second - 1);
+    pMoves.emplace_back(from.first - 1, from.second - 2);
+
+    return pMoves;
 }
 
 
