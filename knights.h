@@ -33,6 +33,10 @@ Path moves(const pair<int, int> & from) {
     return pMoves;
 }
 
+Path legal_moves(const int & size, const Path & path, const pair<int, int> & pos) {
+
+}
+
 
 
 // Do not edit below this line
