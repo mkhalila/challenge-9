@@ -21,7 +21,7 @@ pair<int,int> operator+(const pair<int,int> & a, const pair<int,int> & b) {
 Path moves(const pair<int, int> & from) {
     Path pMoves = Path();
 
-    pMoves.emplace_back(from.first + 1, from.second - 2);
+    pMoves.emplace_back(from.first - 1, from.second - 2);
     pMoves.emplace_back(from.first + 2, from.second - 1);
     pMoves.emplace_back(from.first + 2, from.second + 1);
     pMoves.emplace_back(from.first + 1, from.second + 2);
