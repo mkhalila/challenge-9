@@ -53,6 +53,11 @@ pair<Path, bool> first_tour(const int & size, const Path & path) {
     auto startingPos = path.back();
     auto legalMoves = legal_moves(size, path, startingPos);
 
+    std::sort(legalMoves.begin(), legalMoves.end(), [size, path](pair<int, int> & a, pair<int, int> & b) {
+
+        return legal_moves(size, path, a).size() < legal_moves(size, path, b).size();
+    });
+
     for (int i = 0; i < legalMoves.size(); ++i) {
         Path copy(path);
         copy.push_back(legalMoves[i]);
