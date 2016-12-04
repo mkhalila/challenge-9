@@ -49,7 +49,20 @@ Path legal_moves(const int & size, const Path & path, const pair<int, int> & pos
     return pLegalMoves;
 }
 
+pair<Path, bool> first_tour(const int & size, const Path & path) {
+    auto startingPos = path.back();
+    auto legalMoves = legal_moves(size, path, startingPos);
 
+    for (int i = 0; i < legalMoves.size(); ++i) {
+        Path copy(path);
+        copy.push_back(legalMoves[i]);
+        auto rec = first_tour(size, copy);
+        if(rec.second == true) return make_pair(rec.first, true);
+    }
+
+    if (path.size() == size*size) return make_pair(path, true);
+    else return make_pair(path, false);
+};
 
 // Do not edit below this line
 
