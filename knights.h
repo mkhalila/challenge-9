@@ -66,7 +66,7 @@ pair<Path, bool> first_tour(const int & size, const Path & path) {
     }
 
     if (path.size() == size*size) return make_pair(path, true);
-    else return make_pair(path, false);
+    else return make_pair(Path(), false);
 };
 
 // Do not edit below this line
