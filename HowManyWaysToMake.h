@@ -4,10 +4,10 @@
 // TODO: Your code goes here
 
 template <typename T>
-int howManyWaysToMake(T & begin, T & end, int & target) {
+int howManyWaysToMake(T begin, T end, int target) {
     if (target == 0) return 1;
     else if (target > 0 && begin != end)
-        howManyWaysToMake(begin, end, target - *begin) + howManyWaysToMake(++begin, end, target);
+        return (howManyWaysToMake(begin, end, target - *begin) + howManyWaysToMake(++begin, end, target));
     else return 0;
 }
 
