@@ -3,6 +3,11 @@
 
 // TODO: Your code goes here
 
+template <typename T>
+int howManyWaysToMake(T & begin, T & end, int & target) {
+
+}
+
 // Do not write any code below this line
 
 #endif
