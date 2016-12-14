@@ -6,26 +6,25 @@
 #include <vector>
 using std::vector;
 
+#include <numeric>
+
+#include <iostream>
+using std::cout;
+using std::endl;
+
 template <typename T>
 int bestProfit(T begin, T end) {
-    if (begin - end == 2) {
-        auto first = *begin;
-        ++begin;
-        auto second = *begin;
-        return first - second;
-    }
 
-    else if(begin - end == 1) return *begin;
+    int first = *begin;
 
-    else {
-        int distance = std::distance(begin, end)/2;
-        auto middle = begin + distance;
-        int firstHalf = bestProfit(begin, middle);
-        int secondHalf = bestProfit(middle, end);
+    int toReturn = std::accumulate(begin, end, 0, [&first](int profit, int & value) {
+               if ((value - first) > profit)
+                   profit = value - first;
+               if (value < first) first = value;
+               return profit;
+    });
 
-        if (firstHalf > secondHalf) return firstHalf;
-        else return secondHalf;
-    }
+    return toReturn;
 }
 
 
