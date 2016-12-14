@@ -14,17 +14,14 @@ using std::endl;
 
 template <typename T>
 int bestProfit(T begin, T end) {
-
     int first = *begin;
 
-    int toReturn = std::accumulate(begin, end, 0, [&first](int profit, int & value) {
+    return std::accumulate(begin, end, 0, [&first](int profit, int & value) {
                if ((value - first) > profit)
                    profit = value - first;
                if (value < first) first = value;
                return profit;
     });
-
-    return toReturn;
 }
 
 
